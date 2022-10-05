@@ -1,3 +1,2 @@
 #!/bin/bash
-ls -a -m
-echo "\n"
+ls -ampv
