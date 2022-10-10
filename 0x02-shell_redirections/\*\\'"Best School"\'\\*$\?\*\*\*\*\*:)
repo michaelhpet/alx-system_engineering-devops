@@ -1,1 +1,1 @@
-Best school
+Best School
