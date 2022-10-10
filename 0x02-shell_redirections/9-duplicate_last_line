@@ -1,0 +1,3 @@
+#!/bin/bash
+lastline=$(tail -n 1 iacta)
+echo $lastline >> iacta
