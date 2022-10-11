@@ -1,5 +1,7 @@
 # ALX System Engineering DevOps
 
+Most of Unix systems are managed by using Shell. Just as one needs to know a minimum number of words to have a discussion in a language, they need to know a minimum number of commands to be able to easily interact with a system. Unix systems all have, sometimes with slight differences, the same set of commands. While it is not too hard to remember commands, it might be hard to remember all of their options and how exactly to use them. This repository contains a chronology of projects involving bash scripting and the fundamentals of DevOps with Linux.
+
 Projects include:
 
 0. **0x00-shell_basics** [Shell, basics](https://github.com/michael-peter/alx-system_engineering-devops/tree/main/0x00-shell_basics)
