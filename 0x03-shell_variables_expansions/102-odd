@@ -1,2 +1,2 @@
 #!/bin/bash
-cat -n | tr -d " " | grep -E "^[12468]{1}[02468]?[[:space:]]" | cut -f 2
+cat -n test | tr -d " " | grep -E "^[13579]{1}[13579|[:space:]]{1}" | cut -f 2
