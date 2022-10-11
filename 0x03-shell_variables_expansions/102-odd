@@ -1,2 +1,2 @@
 #!/bin/bash
-xargs echo
+xargs echo | tr " " "\n"
