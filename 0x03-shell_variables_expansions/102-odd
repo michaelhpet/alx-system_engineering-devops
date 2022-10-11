@@ -1,2 +1,2 @@
 #!/bin/bash
-xargs echo | tr " " "\n"
+cat -n test | tr -d " " | grep -E "^[12468]{1}[02468]?[[:space:]]" | cut -f 2
