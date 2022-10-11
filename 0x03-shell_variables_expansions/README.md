@@ -5,6 +5,7 @@ Bash scripting involving variable declaration, shell expansions and more.
 ---
 
 0. (\<o>) Create a script that creates an alias.
+   _file_: `./0-alias`
 
 > - Name `ls`
 > - Value: `rm *`
@@ -12,10 +13,12 @@ Bash scripting involving variable declaration, shell expansions and more.
 ---
 
 1. (Hello you) Create a script that prints `hello user`, where user is the current Linux user.
+   _file_: `1-hello_you`
 
 ---
 
 2. (The path to success is to take massive, determined action) Add `/action` to the PATH. `/action` should be the last directory the shell looks into when looking for a program.
+   _file_: `./2-path`
 
 ---
 
