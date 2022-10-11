@@ -110,7 +110,16 @@ Bash scripting involving variable declaration, shell expansions and more.
 
 ---
 
-16. (The eggs of the brood need to be an odd number) Write a script that prints every other line from the input, starting with the first line.
+16. (The eggs of the brood need to be an odd number) Write a script that prints every odd line from the input, starting with the first line.
     _file_: `./102-odd`
+
+---
+
+17. ( I'm an instant star. Just add water and stir.) Write a shell script that adds the two numbers stored in the environment variables `WATER` and `STIR` and prints the result.
+    _file_: `./102-odd`
+
+> - `WATER` is in base `water`
+> - `STIR` is in base `stir.`
+> - The result should be in base `bestchol`
 
 ---
