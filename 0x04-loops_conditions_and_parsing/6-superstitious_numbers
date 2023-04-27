@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Loop from 1 to 20 and;
+# Display "4" and then "bad luck from China" for 4th loop iteration
+# Display "9" and then "bad luck from Japan" for 9th loop iteration
+# Display "17" and then "bad luck from Italy" for the 17th loop iteration
+
+i=1
+
+while [ "$i" -le 20 ]; do
+	echo "$i"
+	case "$i" in
+		4)
+			echo "bad luck from China"
+			;;
+		9)
+			echo "bad luck from Japan"
+			;;
+		17)
+			echo "bad luck from Italy"
+			;;
+	esac
+	(( i++))
+done
