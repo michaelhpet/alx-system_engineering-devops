@@ -2,7 +2,7 @@
 
 file="/var/run/myscript.pid"
 touch "$file"
-echo "$$" > "$file"
+echo "$!" > "$file"
 
 while true; do
 	echo "To infinity and beyond"
