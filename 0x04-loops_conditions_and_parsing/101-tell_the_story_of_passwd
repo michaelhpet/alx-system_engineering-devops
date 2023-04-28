@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Display the content of the file "/etc/passwd", using the IFS
+
+file="/etc/passwd"
+
+while IFS=":" read -r line; do
+	uname=$( echo "$line" | cut -d ":" -f 1 )
+	pass=$( echo "$line" | cut -d ":" -f 2 )
+	uid=$( echo "$line" | cut -d ":" -f 3 )
+  	gid=$( echo "$line" | cut -d ":" -f 4 )
+	info=$( echo "$line" | cut -d ":" -f 5 )
+  	home=$(echo "$line" | cut -d ":" -f 6)
+  	shell=$(echo "$line" | cut -d ":" -f 7)
+	
+	echo "The user $uname is part"\
+		"of the $gid gang,"\
+		"lives in $home"\
+		"and rides $shell."\
+		"$uid's place is protected"\
+		"by the passcode $pass,"\
+		"more info about the user here: $info"
+done < "$file"
