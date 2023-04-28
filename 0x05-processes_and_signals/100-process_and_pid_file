@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Display "To infinity and beyond" indefinitely unless process beheaded
 
 file="/var/run/myscript.pid"
 echo "$$" > "$file"
