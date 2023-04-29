@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Manages the script manage_my_process
+# Manage file manage_my_process
 
 file="/var/run/my_process.pid"
 
