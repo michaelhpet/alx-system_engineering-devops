@@ -4,15 +4,18 @@ sudo apt-get -y update
 apt-get -y install haproxy
 config=\
 "
-frontend  frontend
+frontend  web-frontend
         bind *:80
-        mode http
-        default_backend backend
-backend backend
+        default_backend web-backend
+backend web-backend
         balance roundrobin
-        server 63210-web-01 100.25.19.204:80 check
-        server 63210-web-02 54.157.159.85:80 check
+        server 175548-web-01 54.166.118.64:80 check
+        server 175548-web-02 54.164.92.22:80 check
 "
 echo "$config" | sudo tee -a /etc/haproxy/haproxy.cfg
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
-sudo service haproxy restart
+if [ "$(pgrep -c haproxy)" -le 0 ]; then
+        sudo service haproxy start
+else
+        sudo service haproxy restart
+fi
