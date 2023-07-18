@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-su "$1" -s /bin/bash -c whoami
+su "$1" -s /bin/bash -c 'whoami'
