@@ -17,11 +17,10 @@ def main():
     employee = requests.get(endpoint).json()
     endpoint = BASE_URL + "/todos"
     todos = requests.get(endpoint, params={"userId": user_id}).json()
-    completed = list(filter(lambda x: x.get("completed"), todos))
-    with open(f"{user_id}.csv", "w") as file:
+    with open(f"{user_id}.csv", "w", newline="") as file:
         f = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
         writer = csv.DictWriter(file, fieldnames=f, quoting=csv.QUOTE_ALL)
-        for todo in completed:
+        for todo in todos:
             writer.writerow({
                 "USER_ID": user_id,
                 "USERNAME": employee.get("username"),
