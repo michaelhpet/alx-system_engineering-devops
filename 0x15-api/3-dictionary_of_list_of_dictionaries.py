@@ -10,20 +10,18 @@ BASE_URL = "https://jsonplaceholder.typicode.com"
 
 def main():
     """Entry point to program."""
-    if len(argv) < 2 or not re.fullmatch(r"\d+", argv[1]):
-        return
-    user_id = int(argv[1])
-    endpoint = BASE_URL + f"/users/{user_id}"
-    employee = requests.get(endpoint).json()
-    endpoint = BASE_URL + "/todos"
-    todos = requests.get(endpoint, params={"userId": user_id}).json()
-    with open(f"{user_id}.json", "w", newline="") as file:
-        out_dict = {}
-        out_dict[user_id] = list(map(lambda x: {
+    endpoint = BASE_URL + f"/users"
+    employees = requests.get(endpoint).json()
+    out_dict = {}
+    for employee in employees:
+        endpoint = BASE_URL + f"/todos?userId={employee.get('id')}"
+        todos = requests.get(endpoint).json()
+        out_dict[employee.get("id")] = list(map(lambda x: {
             "username": employee.get("username"),
             "task": x.get("title"),
             "completed": x.get("completed")
         }, todos))
+    with open(f"todo_all_employees.json", "w", newline="") as file:
         json.dump(out_dict, file)
 
 
