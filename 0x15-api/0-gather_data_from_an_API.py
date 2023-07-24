@@ -19,7 +19,7 @@ def main():
     todos = list(filter(lambda x: x.get("userId") == user_id, todos))
     completed = list(filter(lambda x: x.get("completed"), todos))
     print(
-        "Employee {} is done with tasks({}/{})".format(
+        "Employee {} is done with tasks({}/{}):".format(
             employee.get("name"),
             len(completed),
             len(todos)
