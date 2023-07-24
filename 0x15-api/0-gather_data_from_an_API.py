@@ -9,10 +9,9 @@ BASE_URL = "https://jsonplaceholder.typicode.com"
 
 def main():
     """Entry point to program."""
-    user_id = argv[1]
-    if not user_id or not re.fullmatch("\d+", user_id):
+    if len(argv) < 2 or not re.fullmatch(r"\d+", argv[1]):
         return
-    user_id = int(user_id)
+    user_id = int(argv[1])
     endpoint = BASE_URL + f"/users/{user_id}"
     employee = requests.get(endpoint).json()
     endpoint = BASE_URL + "/todos"
