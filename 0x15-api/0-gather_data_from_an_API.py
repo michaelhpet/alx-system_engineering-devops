@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Gather data from an API."""
-import requests
 import re
+import requests
 from sys import argv
 
 BASE_URL = "https://jsonplaceholder.typicode.com"
@@ -19,7 +19,7 @@ def main():
     todos = list(filter(lambda x: x.get("userId") == user_id, todos))
     completed = list(filter(lambda x: x.get("completed"), todos))
     print(
-        "Employee {:s} is done with tasks({:d}/{:d})".format(
+        "Employee {} is done with tasks({}/{})".format(
             employee.get("name"),
             len(completed),
             len(todos)
