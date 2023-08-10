@@ -14,12 +14,16 @@ def count_words(subreddit, word_list, instances={}, after="", count=0):
         count (int): The parameter of results matched thus far.
     """
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
+    headers = {
+        "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
+    }
     params = {
         "after": after,
         "count": count,
         "limit": 100
     }
-    response = requests.get(url, params=params, allow_redirects=False)
+    response = requests.get(url, headers=headers, params=params,
+                            allow_redirects=False)
     try:
         results = response.json()
         if response.status_code == 404:
